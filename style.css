@@ -1,11 +1,11 @@
 body{
-    background-image: linear-gradient(black, grey);
+    background-image: white;
     padding-bottom: 45px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 h1{
-    color: rgb(167, 38, 38);
+    color: black;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
@@ -24,10 +24,45 @@ p{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
+a:link{
+    color: white;
+    text-decoration: none;
+}
+
+a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: rgb(154, 152, 152);
+    text-decoration: none;
+}
+
+.Job1{
+    line-height: 0.2;
+    text-indent: 20px;
+}
+
+.Job2{
+    line-height: 0.2;
+    text-indent: 20px;
+}
+
+.Job3{
+    line-height: 0.2;
+    text-indent: 20px;
+}
+
+.Job4{
+    line-height: 0.2;
+    text-indent: 20px;
+}
+
 .sticky{ 
-    background: black;
+    background-image: linear-gradient(to right,#18453B,grey);
     position: sticky;
-    top: 0;
+    top: 0px;
     text-align: center;
     border: 3px solid white;
 }
