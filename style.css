@@ -1,11 +1,11 @@
 body{
-    background-color: black;
+    background-image: linear-gradient(black, grey);
     padding-bottom: 45px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 h1{
-    color: black;
+    color: rgb(167, 38, 38);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
