@@ -23,3 +23,11 @@ p{
     color: black;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
+
+.sticky{ 
+    background: linear-gradient(black, grey);
+    position: sticky;
+    top: 0;
+    text-align: center;
+    border: 3px solid white;
+}
