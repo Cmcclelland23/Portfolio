@@ -148,8 +148,14 @@ a:hover{
     text-align: center;
 }
 
+.placeholder{
+    text-align: center;
+    margin-top: 250px;
+}
 
-
+.workTitle{
+    text-align: center;
+}
 
 .sticky{ 
     background-image: linear-gradient(to right,#18453B,grey);
