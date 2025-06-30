@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education | Camden McClelland Portfolio</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light gray background */
+            color: #334155; /* Dark slate gray text */
+        }
+        /* Custom scroll-behavior for smooth scrolling when clicking nav links */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Styling for sections to provide consistent padding */
+        section {
+            padding: 4rem 1rem;
+        }
+        @media (min-width: 768px) {
+            section {
+                padding: 6rem 2rem;
+            }
+        }
+        /* Style for the professional border on images and cards */
+        .card-border {
+            border: 1px solid #e2e8f0; /* Light gray border */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+     <!-- Header Section -->
+    <header class="bg-white shadow-sm py-4 sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center px-4 md:px-8">
+            <!-- Logo/Name -->
+            <a href="index.html#home" class="text-2xl font-bold text-indigo-600 rounded-md p-2 hover:bg-indigo-50 transition duration-300">Camden M.</a>
+
+            <!-- Navigation Links (Hidden on mobile, shown on desktop) -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html#about" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300 rounded-md p-2 hover:bg-gray-100">About</a>
+                
+                <!-- Work Dropdown -->
+                <div class="relative group">
+                    <button id="work-dropdown-button" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300 rounded-md p-2 hover:bg-gray-100 flex items-center focus:outline-none">
+                        Work
+                        <svg class="ml-1 w-4 h-4 transform transition-transform duration-200" id="work-dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="work-dropdown-menu" class="absolute hidden bg-white shadow-lg rounded-md py-2 w-48 mt-2 z-10 border border-gray-200">
+                        <a href="Simcoach.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">Simcoach Games</a>
+                        <a href="mediaquest.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">MediaQuest</a>
+                        <a href="personal.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">Personal Projects</a>
+                    </div>
+                </div>
+
+                <a href="index.html#skills" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300 rounded-md p-2 hover:bg-gray-100">Skills</a>
+                <a href="index.html#contact" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300 rounded-md p-2 hover:bg-gray-100">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button (Hamburger Icon) -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md p-2 transition duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default, toggled by JS) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 shadow-md">
+            <a href="index.html#about" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">About</a>
+            
+            <!-- Mobile Work Dropdown Toggle -->
+            <button id="mobile-work-toggle" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300 flex items-center justify-between focus:outline-none">
+                Work
+                <svg class="w-4 h-4 transform transition-transform duration-200" id="mobile-work-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div id="mobile-work-submenu" class="hidden pl-8 py-1 bg-gray-50">
+                <a href="Simcoach.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">Simcoach Games</a>
+                <a href="mediaquest.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">MediaQuest</a>
+                <a href="personal.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">Personal Projects</a>
+                <a href="Education.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">Education</a>
+            </div>
+
+            <a href="index.html#skills" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">Skills</a>
+            <a href="index.html#contact" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">Contact</a>
+        </div>
+    </header>
+
+    <!-- Job Detail Hero Section -->
+    <section class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-center py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-8">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+                Education
+            </h1>
+            <p class="text-xl md:text-2xl font-light mb-8 max-w-3xl mx-auto">
+                BA + Associates in Game Design, High School Diploma
+            </p>
+            <a href="index.html#work" class="bg-white text-indigo-600 hover:bg-indigo-100 px-8 py-3 rounded-full font-semibold text-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+                &larr; Back to My Experience
+            </a>
+        </div>
+    </section>
+
+    <!-- Job Overview Section -->
+    <section class="bg-white py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-8 max-w-5xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">Overview & Responsibilities</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+                <div class="text-gray-700 leading-relaxed space-y-4">
+                    <p class="text-lg">
+                        At Simcoach Games, I contributed to the development of serious games focused on workforce development. My responsibilities included designing engaging gameplay mechanics, creating intuitive user interfaces, and assisting with marketing strategies to reach target audiences. I worked closely with cross-functional teams to ensure educational objectives were met while maintaining high levels of player engagement.
+                    </p>
+                    <p class="text-lg">
+                        A key project involved developing interactive simulations for vocational training, where I designed scenarios that allowed users to practice real-world skills in a safe, virtual environment. This included wireframing UI elements, prototyping interactions, and gathering feedback for iterative improvements.
+                    </p>
+                </div>
+                <div class="flex justify-center items-center">
+                    <!-- Image related to the job overview -->
+                    <img src="https://placehold.co/500x350/a78bfa/ffffff?text=Simcoach+Overview" alt="Simcoach Overview Image" class="rounded-lg card-border w-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Projects/Contributions Section -->
+    <section class="bg-gray-50 py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-8 max-w-5xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">Key Projects & Contributions</h2>
+            <div class="space-y-12">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-lg p-6 card-border shadow-md grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div class="order-2 md:order-1 text-gray-700 leading-relaxed space-y-3">
+                        <h3 class="text-2xl font-semibold text-gray-800">Project Title A: Interactive Training Module</h3>
+                        <p>
+                            Designed and implemented an interactive training module for XYZ industry, resulting in a 15% increase in user completion rates. Focused on creating realistic scenarios and clear feedback systems.
+                        </p>
+                        <ul class="list-disc list-inside text-sm text-gray-600">
+                            <li>Developed detailed game design documents.</li>
+                            <li>Prototyped core mechanics in Unity.</li>
+                            <li>Collaborated with subject matter experts for content accuracy.</li>
+                        </ul>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium inline-flex items-center mt-2">
+                            View Project Demo <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                    <div class="order-1 md:order-2 flex justify-center">
+                        <img src="https://placehold.co/400x280/a78bfa/ffffff?text=Project+A+Image" alt="Project A Image" class="rounded-md card-border w-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-lg p-6 card-border shadow-md grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div class="flex justify-center">
+                        <img src="https://placehold.co/400x280/60a5fa/ffffff?text=Project+B+Image" alt="Project B Image" class="rounded-md card-border w-full object-cover">
+                    </div>
+                    <div class="text-gray-700 leading-relaxed space-y-3">
+                        <h3 class="text-2xl font-semibold text-gray-800">Project Title B: UI/UX System Overhaul</h3>
+                        <p>
+                            Led the redesign of a complex game's user interface, improving navigation efficiency and visual consistency across all platforms.
+                        </p>
+                        <ul class="list-disc list-inside text-sm text-gray-600">
+                            <li>Conducted user research and usability testing.</li>
+                            <li>Created wireframes, mockups, and interactive prototypes.</li>
+                            <li>Implemented UI elements in engine (e.g., UMG in Unreal).</li>
+                        </ul>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium inline-flex items-center mt-2">
+                            View UI/UX Case Study <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Add more projects as needed -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Applied Section -->
+    <section class="bg-white py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-8 max-w-5xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">Skills Applied</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-lg font-medium">Game Design</span>
+                <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-lg font-medium">UI/UX Design</span>
+                <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-lg font-medium">Unreal Engine</span>
+                <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-lg font-medium">Unity 3D</span>
+                <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-lg font-medium">Prototyping</span>
+                <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-lg font-medium">Marketing Strategy</span>
+                <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-lg font-medium">User Research</span>
+                <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-lg font-medium">Adobe Creative Suite</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section (Copied from main portfolio for consistency) -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto text-center px-4 md:px-8">
+            <p>&copy; <span id="current-year-footer"></span> Camden McClelland. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <!-- Social Media Links (replace with your actual links) -->
+                <a href="https://github.com/your-github-profile" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.47.087.68-.233.68-.522 0-.257-.009-.942-.014-1.848-2.782.603-3.369-1.34-3.369-1.34-.454-1.157-1.11-1.465-1.11-1.465-.908-.618.069-.606.069-.606 1.006.07 1.532 1.03 1.532 1.03.89 1.529 2.342 1.087 2.91.832.091-.646.35-1.087.636-1.338-2.22-.253-4.555-1.119-4.555-4.964 0-1.096.39-1.993 1.029-2.695-.103-.254-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.643 9.643 0 0112 6.684c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.025 2.747-1.025.546 1.379.202 2.396.099 2.65.64.702 1.029 1.599 1.029 2.695 0 3.853-2.339 4.707-4.566 4.956.359.307.678.915.678 1.846 0 1.338-.012 2.419-.012 2.747 0 .292.208.614.688.514C21.137 20.18 24 16.425 24 12.017 24 6.484 19.522 2 14 2h-2z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+                <!-- Instagram Icon -->
+                <a href="https://www.instagram.com/camden_mcclelland23/" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.636 3.375.948 2.77 1.353 2.155 1.96.854 3.26 0 4.791 0 6.426v11.148C0 19.209.854 20.74 2.155 22.042c.615.607 1.22.997 1.985 1.309.765.303 1.635.504 2.913.562C8.333 24 8.74 24 12 24s3.667-.014 4.947-.072c1.278-.06 2.148-.261 2.913-.564.765-.303 1.37-.708 1.985-1.312 1.301-1.301 2.155-2.832 2.155-4.468V6.426c0-1.635-.854-3.166-2.155-4.468C21.052 1.353 20.447.948 19.682.636 18.915.333 18.045.132 16.767.072 15.488.014 15.083 0 12 0zm0 2.163c3.217 0 3.585.016 4.85.071 1.17.055 1.8.245 2.224.41.564.228.988.487 1.488.989.5.5.766.923.995 1.488.165.424.356 1.054.41 2.224.057 1.265.071 1.633.071 4.85s-.014 3.585-.071 4.85c-.054 1.17-.245 1.8-.41 2.224-.228.564-.487.988-.989 1.488-.5.5-.923.766-1.488.995-.424.165-1.054.356-2.224.41-.698.032-1.066.046-4.85.046s-4.152-.014-4.85-.046c-1.17-.054-1.8-.245-2.224-.41-.564-.228-.988-.487-1.488-.989-.5-.5-.766-.923-.995-1.488-.165-.424-.356-1.054-.41-2.224-.057-1.265-.071-1.633-.071-4.85s.014-3.585.071-4.85c.054-1.17.245-1.8.41-2.224.228-.564.487-.988.989-1.488.5-.5.923-.766 1.488-.995.424-.165 1.054-.356 2.224-.41C8.415 2.179 8.819 2.163 12 2.163zm0 3.635c-3.442 0-6.237 2.795-6.237 6.237s2.795 6.237 6.237 6.237 6.237-2.795 6.237-6.237-2.795-6.237-6.237-6.237zm0 10.385c-2.298 0-4.148-1.85-4.148-4.148S9.702 7.852 12 7.852s4.148 1.85 4.148 4.148-1.85 4.148-4.148 4.148zm5.52-4.99a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+<!-- JavaScript for Mobile Menu and Current Year -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = mobileMenu.querySelectorAll('a');
+
+            // Toggle mobile menu visibility
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Hide mobile menu when a link is clicked (for smooth scrolling)
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Set current year in footer
+            document.getElementById('current-year-footer').textContent = new Date().getFullYear(); // FIX: Changed ID to match HTML
+
+            // --- Desktop Work Dropdown Logic ---
+            const workDropdownButton = document.getElementById('work-dropdown-button');
+            const workDropdownMenu = document.getElementById('work-dropdown-menu');
+            const workDropdownArrow = document.getElementById('work-dropdown-arrow');
+
+            // Toggle dropdown visibility on button click
+            workDropdownButton.addEventListener('click', function(event) {
+                event.stopPropagation(); // Prevent document click from closing immediately
+                workDropdownMenu.classList.toggle('hidden');
+                workDropdownArrow.classList.toggle('rotate-180'); // Rotate arrow
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!workDropdownButton.contains(event.target) && !workDropdownMenu.contains(event.target)) {
+                    workDropdownMenu.classList.add('hidden');
+                    workDropdownArrow.classList.remove('rotate-180'); // Reset arrow
+                }
+            });
+
+            // --- Mobile Work Dropdown Logic ---
+            const mobileWorkToggle = document.getElementById('mobile-work-toggle');
+            const mobileWorkSubmenu = document.getElementById('mobile-work-submenu');
+            const mobileWorkArrow = document.getElementById('mobile-work-arrow');
+
+            mobileWorkToggle.addEventListener('click', function() {
+                mobileWorkSubmenu.classList.toggle('hidden');
+                mobileWorkArrow.classList.toggle('rotate-180'); // Rotate arrow
+            });
+        });
+    </script>
+
+</body>
+</html>
