@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography | Camden McClelland Portfolio</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">  
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"> <!-- If you have a Safari pinned tab icon -->
+    <meta name="msapplication-TileColor" content="#da532c"> <!-- For Windows Tile icon -->
+    <meta name="theme-color" content="#6366f1"> <!-- For browser theme color -->
+
+
+    <script type="application/ld+json">
+     {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+         "name": "Camden McClelland's Portfolio",
+         "url": "https://camdenm.com",
+        "logo": "https://camdenm.com/images/CM.png",
+        "sameAs": [
+        "https://www.linkedin.com/in/camdenm/",
+        "https://www.instagram.com/camden_mcclelland23/",
+        "https://github.com/Cmcclelland23",
+        "https://www.facebook.com/camden.mcclelland.58"
+  ]
+     "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "Michigan State University"
+    }
+}
+</script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light gray background */
+            color: #334155; /* Dark slate gray text */
+        }
+        /* Custom scroll-behavior for smooth scrolling when clicking nav links */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Styling for sections to provide consistent padding */
+        section {
+            padding: 4rem 1rem;
+        }
+        @media (min-width: 768px) {
+            section {
+                padding: 6rem 2rem;
+            }
+        }
+        /* Style for the professional border on images and cards */
+        .card-border {
+            border: 1px solid #e2e8f0; /* Light gray border */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+               /* Styles for the lightbox modal */
+        .lightbox-modal {
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+        }
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain; /* Ensures image fits within bounds */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+     <!-- Header Section -->
+    <header class="bg-white shadow-sm py-4 sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center px-4 md:px-8">
+            <!-- Logo/Name -->
+            <a href="index.html" class="text-2xl font-bold text-indigo-600 rounded-md p-2 hover:bg-indigo-50 transition duration-300">Camden McClelland</a>
+
+            <!-- Navigation Links (Hidden on mobile, shown on desktop) -->
+            <div class="hidden md:flex space-x-8">
+                <!-- <a href="blog.html" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300 rounded-md p-2 hover:bg-gray-100">Blog</a> -->
+                <a href="#about" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300 rounded-md p-2 hover:bg-gray-100">About</a>
+                
+                <!-- Work Dropdown -->
+                <div class="relative group">
+                    <button id="work-dropdown-button" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300 rounded-md p-2 hover:bg-gray-100 flex items-center focus:outline-none">
+                        Work
+                        <svg class="ml-1 w-4 h-4 transform transition-transform duration-200" id="work-dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="work-dropdown-menu" class="absolute hidden bg-white shadow-lg rounded-md py-2 w-48 mt-2 z-10 border border-gray-200">
+                        <a href="Simcoach.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">Simcoach Games</a>
+                        <a href="mediaquest.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">MediaQuest</a>
+                        <a href="personal.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">Personal Projects</a>
+                        <a href="mobilenom.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">Mobile Nom</a>
+                        <a href="UEFN.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">UEFN</a>
+                        <a href="SpartanVision.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">Spartan Vision</a>
+                    </div>
+                </div>
+
+                <a href="Education.html" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300 rounded-md p-2 hover:bg-gray-100">Education</a>
+                <a href="#skills" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300 rounded-md p-2 hover:bg-gray-100">Skills</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300 rounded-md p-2 hover:bg-gray-100">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button (Hamburger Icon) -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md p-2 transition duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default, toggled by JS) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 shadow-md">
+            <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">About</a>
+            
+            <!-- Mobile Work Dropdown Toggle -->
+            <button id="mobile-work-toggle" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300 flex items-center justify-between focus:outline-none">
+                Work
+                <svg class="w-4 h-4 transform transition-transform duration-200" id="mobile-work-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div id="mobile-work-submenu" class="hidden pl-8 py-1 bg-gray-50">
+                <a href="Simcoach.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">Simcoach Games</a>
+                <a href="mediaquest.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">MediaQuest</a>
+                <a href="personal.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">Personal Projects</a>
+                <a href="mobilenom.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">Mobile Nom</a>
+                <a href="UEFN.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">UEFN</a>
+                <a href="SpartanVision.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">Spartan Vision</a>
+            </div>
+
+            <a href="Education.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">Education</a>
+            <a href="#skills" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">Skills</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition duration-300">Contact</a>
+        </div>
+    </header>
+
+     <!-- Photography Hero Section -->
+    <section class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-center py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-8">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+                My Photography
+            </h1>
+            <p class="text-xl md:text-2xl font-light mb-8 max-w-3xl mx-auto">
+                A collection of moments captured through my lens.
+            </p>
+            <a href="index.html#work" class="bg-white text-indigo-600 hover:bg-indigo-100 px-8 py-3 rounded-full font-semibold text-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+                &larr; Back to My Experience
+            </a>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Grid Section -->
+    <section class="bg-white py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-8 max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">Gallery</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+                <!-- Chair Pic  -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="images/SeniorPicChair.jpg" data-alt="Landscape View">
+                    <img src="images/SeniorPicChair.jpg" alt="Senior Group Portrait" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Couple Brick Archway -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/CoupleBrickArchway.JPG" data-alt="Portrait of a City">
+                    <img src="PhotographySection/CoupleBrickArchway.JPG" alt="Thumbnail of Photo 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Rugby Air -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/RugbyAir.JPG" data-alt="Nature Scene">
+                    <img src="PhotographySection/RugbyAir.JPG" alt="Thumbnail of Photo 3" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Photo Item 4 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/GradThrow.jpg" data-alt="Abstract Shot">
+                    <img src="PhotographySection/GradThrow.jpg" alt="Thumbnail of Photo 4" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Rugby Run -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/RugbyRun.JPG" data-alt="Another Landscape">
+                    <img src="PhotographySection/RugbyRun.JPG" alt="Thumbnail of Photo 5" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Street Photography -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/CoupleGazebo.JPG" data-alt="Street Photography">
+                    <img src="PhotographySection/CoupleGazebo.JPG" alt="Thumbnail of Photo 6" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Rugby Huddle-->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/RugbyHuddle.JPG" data-alt="Another Landscape">
+
+                    <img src="PhotographySection/RugbyHuddle.JPG" alt="Thumbnail of Photo 5" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Grad Pyramid -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/GradPyramid.jpg" data-alt="Another Landscape">
+                    <img src="PhotographySection/GradPyramid.jpg" alt="Thumbnail of Photo 5" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Rugby Fight -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/RugbyFight.JPG" data-alt="Another Landscape">
+                    <img src="PhotographySection/RugbyFight.JPG" alt="Thumbnail of Photo 5" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Couple Walkaway -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/CoupleWalkaway.JPG" data-alt="Another Landscape">
+                    <img src="PhotographySection/CoupleWalkaway.JPG" alt="Thumbnail of Photo 5" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Grad Caps -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/Gradcaps.jpg" data-alt="Another Landscape">
+                    <img src="PhotographySection/Gradcaps.jpg" alt="Gradcaps" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Couple Doorway -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/CoupleDoor.JPG" data-alt="Another Landscape">
+                    <img src="PhotographySection/CoupleDoor.JPG" alt="Couple Doorway" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Rugby Number -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/RugbyNumber.JPG" data-alt="Another Landscape">
+                    <img src="PhotographySection/RugbyNumber.JPG" alt="Rugby Number" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Grad Walkaway -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/GradWalking.jpg" data-alt="Another Landscape">
+                    <img src="PhotographySection/GradWalking.jpg" alt="Grad Walkaway" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Grad Duo -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/GradDuo.jpg" data-alt="Another Landscape">
+                    <img src="PhotographySection/GradDuo.jpg" alt="Grad Duo" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Couple Archway -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/CoupleArchway.JPG" data-alt="Another Landscape">
+                    <img src="PhotographySection/CoupleArchway.JPG" alt="Couple Archway" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Rugby Scrum -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/RugbyScrum.JPG" data-alt="Another Landscape">
+                    <img src="PhotographySection/RugbyScrum.JPG" alt="Rugby Scrum" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+
+                <!-- Couple Hold -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/CoupleHold.JPG" data-alt="Another Landscape">
+                    <img src="PhotographySection/CoupleHold.JPG" alt="Couple Hold" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Rugby Juke -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/RugbyJuke.JPG" data-alt="Another Landscape">
+                    <img src="PhotographySection/RugbyJuke.JPG" alt="Rugby Juke" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Grad Group -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/GradGroup.jpg" data-alt="Another Landscape">
+                    <img src="PhotographySection/GradGroup.jpg" alt="Grad Group" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Couple Railing -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/CoupleRailing.JPG" data-alt="Another Landscape">
+                    <img src="PhotographySection/CoupleRailing.JPG" alt="Couple Railing" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+                <!-- Grad Walking Backs -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md cursor-pointer photo-item" data-full-src="PhotographySection/GradWalkingBacks.jpg" data-alt="Another Landscape">
+                    <img src="PhotographySection/GradWalkingBacks.jpg" alt="Grad Walking Backs" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold">View Photo</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section (Copied from main portfolio for consistency) -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto text-center px-4 md:px-8">
+            <p>&copy; <span id="current-year-footer"></span> Camden McClelland. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <!-- Social Media Links (replace with your actual links) -->
+                <a href="https://github.com/your-github-profile" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.47.087.68-.233.68-.522 0-.257-.009-.942-.014-1.848-2.782.603-3.369-1.34-3.369-1.34-.454-1.157-1.11-1.465-1.11-1.465-.908-.618.069-.606.069-.606 1.006.07 1.532 1.03 1.532 1.03.89 1.529 2.342 1.087 2.91.832.091-.646.35-1.087.636-1.338-2.22-.253-4.555-1.119-4.555-4.964 0-1.096.39-1.993 1.029-2.695-.103-.254-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.643 9.643 0 0112 6.684c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.025 2.747-1.025.546 1.379.202 2.396.099 2.65.64.702 1.029 1.599 1.029 2.695 0 3.853-2.339 4.707-4.566 4.956.359.307.678.915.678 1.846 0 1.338-.012 2.419-.012 2.747 0 .292.208.614.688.514C21.137 20.18 24 16.425 24 12.017 24 6.484 19.522 2 14 2h-2z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+                <!-- Instagram Icon -->
+                <a href="https://www.instagram.com/camden_mcclelland23/" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.636 3.375.948 2.77 1.353 2.155 1.96.854 3.26 0 4.791 0 6.426v11.148C0 19.209.854 20.74 2.155 22.042c.615.607 1.22.997 1.985 1.309.765.303 1.635.504 2.913.562C8.333 24 8.74 24 12 24s3.667-.014 4.947-.072c1.278-.06 2.148-.261 2.913-.564.765-.303 1.37-.708 1.985-1.312 1.301-1.301 2.155-2.832 2.155-4.468V6.426c0-1.635-.854-3.166-2.155-4.468C21.052 1.353 20.447.948 19.682.636 18.915.333 18.045.132 16.767.072 15.488.014 15.083 0 12 0zm0 2.163c3.217 0 3.585.016 4.85.071 1.17.055 1.8.245 2.224.41.564.228.988.487 1.488.989.5.5.766.923.995 1.488.165.424.356 1.054.41 2.224.057 1.265.071 1.633.071 4.85s-.014 3.585-.071 4.85c-.054 1.17-.245 1.8-.41 2.224-.228.564-.487.988-.989 1.488-.5.5-.923.766-1.488.995-.424.165-1.054.356-2.224.41-.698.032-1.066.046-4.85.046s-4.152-.014-4.85-.046c-1.17-.054-1.8-.245-2.224-.41-.564-.228-.988-.487-1.488-.989-.5-.5-.766-.923-.995-1.488-.165-.424-.356-1.054-.41-2.224-.057-1.265-.071-1.633-.071-4.85s.014-3.585.071-4.85c.054-1.17.245-1.8.41-2.224.228-.564.487-.988.989-1.488.5-.5.923-.766 1.488-.995.424-.165 1.054-.356 2.224-.41C8.415 2.179 8.819 2.163 12 2.163zm0 3.635c-3.442 0-6.237 2.795-6.237 6.237s2.795 6.237 6.237 6.237 6.237-2.795 6.237-6.237-2.795-6.237-6.237-6.237zm0 10.385c-2.298 0-4.148-1.85-4.148-4.148S9.702 7.852 12 7.852s4.148 1.85 4.148 4.148-1.85 4.148-4.148 4.148zm5.52-4.99a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Lightbox Modal for Full-Size Images -->
+    <div id="lightbox-modal" class="fixed inset-0 hidden flex items-center justify-center z-[1000] lightbox-modal">
+        <div class="relative flex items-center justify-center w-full h-full">
+            <button id="close-lightbox" class="absolute top-4 right-4 text-white text-3xl font-bold focus:outline-none z-10">
+                &times;
+            </button>
+            <img id="lightbox-image" src="" alt="" class="lightbox-content rounded-lg shadow-2xl">
+        </div>
+    </div>
+
+<!-- JavaScript for Mobile Menu and Current Year -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = mobileMenu.querySelectorAll('a');
+
+            // Toggle mobile menu visibility
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Hide mobile menu when a link is clicked (for smooth scrolling)
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Set current year in footer
+            document.getElementById('current-year-footer').textContent = new Date().getFullYear(); // FIX: Changed ID to match HTML
+
+            // --- Desktop Work Dropdown Logic ---
+            const workDropdownButton = document.getElementById('work-dropdown-button');
+            const workDropdownMenu = document.getElementById('work-dropdown-menu');
+            const workDropdownArrow = document.getElementById('work-dropdown-arrow');
+
+            // Toggle dropdown visibility on button click
+            workDropdownButton.addEventListener('click', function(event) {
+                event.stopPropagation(); // Prevent document click from closing immediately
+                workDropdownMenu.classList.toggle('hidden');
+                workDropdownArrow.classList.toggle('rotate-180'); // Rotate arrow
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!workDropdownButton.contains(event.target) && !workDropdownMenu.contains(event.target)) {
+                    workDropdownMenu.classList.add('hidden');
+                    workDropdownArrow.classList.remove('rotate-180'); // Reset arrow
+                }
+            });
+
+            // --- Mobile Work Dropdown Logic ---
+            const mobileWorkToggle = document.getElementById('mobile-work-toggle');
+            const mobileWorkSubmenu = document.getElementById('mobile-work-submenu');
+            const mobileWorkArrow = document.getElementById('mobile-work-arrow');
+
+            mobileWorkToggle.addEventListener('click', function() {
+                mobileWorkSubmenu.classList.toggle('hidden');
+                mobileWorkArrow.classList.toggle('rotate-180'); // Rotate arrow
+            });
+
+             // --- Lightbox Functionality (for photography.html) ---
+            // This part is specific to photography.html, but included here for completeness of JS.
+            // It will only execute if the elements (like .photo-item) are present on the page.
+            const lightboxModal = document.getElementById('lightbox-modal');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const closeLightboxButton = document.getElementById('close-lightbox');
+            const photoItems = document.querySelectorAll('.photo-item');
+
+            if (photoItems.length > 0) { // Only add listeners if photo items exist
+                photoItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        const fullSrc = this.dataset.fullSrc;
+                        const altText = this.dataset.alt;
+                        if (fullSrc && lightboxImage && lightboxModal) {
+                            lightboxImage.src = fullSrc;
+                            lightboxImage.alt = altText;
+                            lightboxModal.classList.remove('hidden');
+                            document.body.style.overflow = 'hidden'; // Prevent scrolling background
+                        }
+                    });
+                });
+            }
+
+            if (closeLightboxButton && lightboxModal) {
+                closeLightboxButton.addEventListener('click', function() {
+                    lightboxModal.classList.add('hidden');
+                    lightboxImage.src = ''; // Clear image src
+                    document.body.style.overflow = ''; // Restore scrolling
+                });
+            }
+
+            if (lightboxModal) {
+                lightboxModal.addEventListener('click', function(event) {
+                    if (event.target === lightboxModal) { // Only close if clicking the background, not the image
+                        lightboxModal.classList.add('hidden');
+                        lightboxImage.src = '';
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && lightboxModal && !lightboxModal.classList.contains('hidden')) {
+                    lightboxModal.classList.add('hidden');
+                    lightboxImage.src = '';
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
