@@ -456,6 +456,54 @@
                     mobileWorkArrow.classList.toggle('rotate-180'); // Rotate arrow
                 });
             }
+            // --- Lightbox Functionality (for photography.html) ---
+            // This part is specific to photography.html, but included here for completeness of JS.
+            // It will only execute if the elements (like .photo-item) are present on the page.
+            const lightboxModal = document.getElementById('lightbox-modal');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const closeLightboxButton = document.getElementById('close-lightbox');
+            const photoItems = document.querySelectorAll('.photo-item');
+
+            if (photoItems.length > 0) { // Only add listeners if photo items exist
+                photoItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        const fullSrc = this.dataset.fullSrc;
+                        const altText = this.dataset.alt;
+                        if (fullSrc && lightboxImage && lightboxModal) {
+                            lightboxImage.src = fullSrc;
+                            lightboxImage.alt = altText;
+                            lightboxModal.classList.remove('hidden');
+                            document.body.style.overflow = 'hidden'; // Prevent scrolling background
+                        }
+                    });
+                });
+            }
+
+            if (closeLightboxButton && lightboxModal) {
+                closeLightboxButton.addEventListener('click', function() {
+                    lightboxModal.classList.add('hidden');
+                    lightboxImage.src = ''; // Clear image src
+                    document.body.style.overflow = ''; // Restore scrolling
+                });
+            }
+
+            if (lightboxModal) {
+                lightboxModal.addEventListener('click', function(event) {
+                    if (event.target === lightboxModal) { // Only close if clicking the background, not the image
+                        lightboxModal.classList.add('hidden');
+                        lightboxImage.src = '';
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && lightboxModal && !lightboxModal.classList.contains('hidden')) {
+                    lightboxModal.classList.add('hidden');
+                    lightboxImage.src = '';
+                    document.body.style.overflow = '';
+                }
+            });
         });
     </script>
 
