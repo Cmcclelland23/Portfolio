@@ -391,19 +391,32 @@
             const navLinks = mobileMenu.querySelectorAll('a');
 
             // Toggle mobile menu visibility
-            mobileMenuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-            });
+            // Add a check to ensure mobileMenuButton exists before adding event listener
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    if (mobileMenu) { // Ensure mobileMenu also exists
+                        mobileMenu.classList.toggle('hidden');
+                    }
+                });
+            }
 
             // Hide mobile menu when a link is clicked (for smooth scrolling)
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    mobileMenu.classList.add('hidden');
+            // Add a check for navLinks existence
+            if (navLinks) {
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (mobileMenu) { // Ensure mobileMenu exists before trying to hide it
+                            mobileMenu.classList.add('hidden');
+                        }
+                    });
                 });
-            });
+            }
 
             // Set current year in footer
-            document.getElementById('current-year-footer').textContent = new Date().getFullYear(); // FIX: Changed ID to match HTML
+            const currentYearElement = document.getElementById('current-year'); // Corrected ID to match HTML
+            if (currentYearElement) { // Add a check to ensure element exists
+                currentYearElement.textContent = new Date().getFullYear();
+            }
 
             // --- Desktop Work Dropdown Logic ---
             const workDropdownButton = document.getElementById('work-dropdown-button');
@@ -411,17 +424,23 @@
             const workDropdownArrow = document.getElementById('work-dropdown-arrow');
 
             // Toggle dropdown visibility on button click
-            workDropdownButton.addEventListener('click', function(event) {
-                event.stopPropagation(); // Prevent document click from closing immediately
-                workDropdownMenu.classList.toggle('hidden');
-                workDropdownArrow.classList.toggle('rotate-180'); // Rotate arrow
-            });
+            // Add checks to ensure all elements exist
+            if (workDropdownButton && workDropdownMenu && workDropdownArrow) {
+                workDropdownButton.addEventListener('click', function(event) {
+                    event.stopPropagation(); // Prevent document click from closing immediately
+                    workDropdownMenu.classList.toggle('hidden');
+                    workDropdownArrow.classList.toggle('rotate-180'); // Rotate arrow
+                });
+            }
 
             // Close dropdown when clicking outside
             document.addEventListener('click', function(event) {
-                if (!workDropdownButton.contains(event.target) && !workDropdownMenu.contains(event.target)) {
-                    workDropdownMenu.classList.add('hidden');
-                    workDropdownArrow.classList.remove('rotate-180'); // Reset arrow
+                // Add checks to ensure all elements exist before trying to use them
+                if (workDropdownButton && workDropdownMenu && workDropdownArrow) {
+                    if (!workDropdownButton.contains(event.target) && !workDropdownMenu.contains(event.target)) {
+                        workDropdownMenu.classList.add('hidden');
+                        workDropdownArrow.classList.remove('rotate-180'); // Reset arrow
+                    }
                 }
             });
 
@@ -430,61 +449,16 @@
             const mobileWorkSubmenu = document.getElementById('mobile-work-submenu');
             const mobileWorkArrow = document.getElementById('mobile-work-arrow');
 
-            mobileWorkToggle.addEventListener('click', function() {
-                mobileWorkSubmenu.classList.toggle('hidden');
-                mobileWorkArrow.classList.toggle('rotate-180'); // Rotate arrow
-            });
-
-             // --- Lightbox Functionality (for photography.html) ---
-            // This part is specific to photography.html, but included here for completeness of JS.
-            // It will only execute if the elements (like .photo-item) are present on the page.
-            const lightboxModal = document.getElementById('lightbox-modal');
-            const lightboxImage = document.getElementById('lightbox-image');
-            const closeLightboxButton = document.getElementById('close-lightbox');
-            const photoItems = document.querySelectorAll('.photo-item');
-
-            if (photoItems.length > 0) { // Only add listeners if photo items exist
-                photoItems.forEach(item => {
-                    item.addEventListener('click', function() {
-                        const fullSrc = this.dataset.fullSrc;
-                        const altText = this.dataset.alt;
-                        if (fullSrc && lightboxImage && lightboxModal) {
-                            lightboxImage.src = fullSrc;
-                            lightboxImage.alt = altText;
-                            lightboxModal.classList.remove('hidden');
-                            document.body.style.overflow = 'hidden'; // Prevent scrolling background
-                        }
-                    });
+            // Add checks to ensure all elements exist
+            if (mobileWorkToggle && mobileWorkSubmenu && mobileWorkArrow) {
+                mobileWorkToggle.addEventListener('click', function() {
+                    mobileWorkSubmenu.classList.toggle('hidden');
+                    mobileWorkArrow.classList.toggle('rotate-180'); // Rotate arrow
                 });
             }
-
-            if (closeLightboxButton && lightboxModal) {
-                closeLightboxButton.addEventListener('click', function() {
-                    lightboxModal.classList.add('hidden');
-                    lightboxImage.src = ''; // Clear image src
-                    document.body.style.overflow = ''; // Restore scrolling
-                });
-            }
-
-            if (lightboxModal) {
-                lightboxModal.addEventListener('click', function(event) {
-                    if (event.target === lightboxModal) { // Only close if clicking the background, not the image
-                        lightboxModal.classList.add('hidden');
-                        lightboxImage.src = '';
-                        document.body.style.overflow = '';
-                    }
-                });
-            }
-
-            document.addEventListener('keydown', function(event) {
-                if (event.key === 'Escape' && lightboxModal && !lightboxModal.classList.contains('hidden')) {
-                    lightboxModal.classList.add('hidden');
-                    lightboxImage.src = '';
-                    document.body.style.overflow = '';
-                }
-            });
         });
     </script>
+
 
 </body>
 </html>
